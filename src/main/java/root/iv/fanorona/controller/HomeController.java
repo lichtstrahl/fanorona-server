@@ -10,11 +10,12 @@ import root.iv.fanorona.data.visit.Visit;
 import root.iv.fanorona.data.visit.VisitRepository;
 
 import javax.inject.Inject;
+import java.time.ZonedDateTime;
 import java.util.*;
 
 @Controller
 public class HomeController {
-    private static final String GMT_MOSCOW = "GMT+3:00";
+    private static final int GMT_MOSCOW = 3;
     private final VisitRepository visitRepository;
 
     @Inject
@@ -27,14 +28,9 @@ public class HomeController {
         Map<String, Object> model = new HashMap<>();
         model.put("name", name);
 
-
-        Date now = Calendar.getInstance().getTime();
-        Visit visit = Visit.builder()
-                        .date(now)
-                        .name(name)
-                        .build();
+        Calendar now = Calendar.getInstance();
+        Visit visit = Visit.create(name, now);
         visitRepository.save(visit);
-
 
         return new ModelAndView("home", model, HttpStatus.OK);
     }
@@ -42,8 +38,6 @@ public class HomeController {
     @GetMapping("/api/stats")
     public ResponseEntity stats() {
         List<Visit> list = visitRepository.findAll();
-        Date date = list.get(list.size()-1).getDate();
-
         return ResponseEntity.ok(list);
     }
 }

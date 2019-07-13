@@ -1,18 +1,17 @@
 package root.iv.fanorona.data.visit;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.util.Calendar;
 
+/**
+ * Перед вставкой данной сущности. Установленное время увеличивается на 3 часа
+ */
 @Data
 @Entity
-@Builder
 @NoArgsConstructor
-@AllArgsConstructor
 @Table(name = Visit.TABLE_NAME)
 public class Visit {
     public static final String TABLE_NAME = "visit";
@@ -22,8 +21,15 @@ public class Visit {
     private long id;
 
     @Column(name = "date", nullable = false)
-    private Date date;
+    private String date;
 
     @Column(name = "name", nullable = false)
     private String name;
+
+    public static Visit create(String name, Calendar date) {
+        Visit visit = new Visit();
+        visit.setName(name);
+        visit.setDate(date.getTime().toString());
+        return visit;
+    }
 }
