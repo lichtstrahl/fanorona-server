@@ -17,6 +17,7 @@
 
 	<properties>
 		<java.version>11</java.version>
+		<server.port>8080</server.port>
 	</properties>
 
 	<dependencies>
@@ -92,4 +93,13 @@
 		</plugins>
 	</build>
 
+	<distributionManagement>
+		<repository>
+			<uniqueVersion>false</uniqueVersion>
+			<id>heroku</id>
+			<name>Heroku repository</name>
+			<url>https://git.heroku.com/fanorona-java-server.git</url>
+			<layout>default</layout>
+		</repository>
+	</distributionManagement>
 </project>
