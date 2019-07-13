@@ -23,6 +23,9 @@ public class Visit {
     @Column(name = "date", nullable = false)
     private String date;
 
+    @Column(name = "ts", nullable = false)
+    private long ts;
+
     @Column(name = "name", nullable = false)
     private String name;
 
@@ -30,6 +33,7 @@ public class Visit {
         Visit visit = new Visit();
         visit.setName(name);
         visit.setDate(date.getTime().toString());
+        visit.setTs(date.getTime().getTime());
         return visit;
     }
 }

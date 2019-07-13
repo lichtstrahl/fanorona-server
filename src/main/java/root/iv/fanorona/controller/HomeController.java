@@ -23,7 +23,7 @@ public class HomeController {
         this.visitRepository = visitRepository;
     }
 
-    @GetMapping
+    @GetMapping("/home")
     public ModelAndView home(@RequestParam(name = "name", defaultValue = "Игорь", required = false) String name) {
         Map<String, Object> model = new HashMap<>();
         model.put("name", name);
