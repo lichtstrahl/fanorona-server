@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>root.iv</groupId>
 	<artifactId>fanorona</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>2.0</version>
 	<packaging>jar</packaging>
 	<name>fanorona</name>
 	<description>Demo project for Spring Boot</description>
