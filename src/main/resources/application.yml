@@ -1,0 +1,20 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: validate # Не обновлять структуру БД. Только проверка
+    show-sql: true
+
+  datasource:
+    url: jdbc:mysql://us-cdbr-iron-east-02.cleardb.net:3306/heroku_ce3ccc74b734089?failOverReadOnly=false&useUnicode=yes&characterEncoding=UTF-8&reconnect=true
+    username: be211bdbd58eb9
+    password: 9c93d4c9
+
+    hikari:   # Настройки пула соединений к БД.
+      idle-timeout: 60000   # Время простоя - 60 секунд (минимально-возможное)
+      minimum-idle: 0       # Минимальное количество спящих - 0 (чтобы все равно или поздно умирали)
+      maximum-pool-size: 10 # Рахмер пула соединений - 10 (максимум 15 по тарифному плану)
+    driver-class-name: com.mysql.cj.jdbc.Driver
+#    dbcp2:
+#      default-schema: fanorona
+
+

@@ -17,7 +17,7 @@ public class Visit {
     public static final String TABLE_NAME = "visit";
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     @Column(name = "date", nullable = false)
