@@ -1,5 +1,6 @@
 package root.iv.fanorona.controller;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -15,6 +16,7 @@ import java.util.*;
 
 @Controller
 public class HomeController {
+    private static final String VERSION = String.format(Locale.ENGLISH, "%d.%d", 0,21);
     private static final int GMT_MOSCOW = 3;
     private final VisitRepository visitRepository;
 
@@ -39,5 +41,10 @@ public class HomeController {
     public ResponseEntity stats() {
         List<Visit> list = visitRepository.findAll();
         return ResponseEntity.ok(list);
+    }
+
+    @GetMapping("/api/version")
+    public ResponseEntity<String> version() {
+        return ResponseEntity.ok(VERSION);
     }
 }
