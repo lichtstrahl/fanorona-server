@@ -20,7 +20,7 @@ import java.util.concurrent.TimeUnit;
 
 @SpringBootTest
 @RunWith(SpringRunner.class)
-public class FanoronaApplicationTests {
+public class HomeControllerTest {
 	private static final String[] VISIT_NAMES = new String[] {
 			"igor", "egor", "sveta"
 	};
