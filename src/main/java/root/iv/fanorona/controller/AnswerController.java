@@ -1,5 +1,7 @@
 package root.iv.fanorona.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.Assert;
@@ -13,12 +15,14 @@ import java.util.Locale;
 
 @Controller
 public class AnswerController {
+    private Logger logger = LoggerFactory.getLogger(AnswerController.class);
 
     @Inject
     private AnswerRepository answerRepository;
 
     @PostMapping(value = "/api/answers")
     public ResponseEntity<Answer> create(@RequestBody Answer answer) {
+        logger.info(String.format("Создание Answer с текстом \"%s\"", answer.getContent()));
         answer.setId(null);
         Answer newAnswer = answerRepository.save(answer);
         return ResponseEntity.ok(newAnswer);
