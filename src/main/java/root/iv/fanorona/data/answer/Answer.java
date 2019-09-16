@@ -1,6 +1,7 @@
 package root.iv.fanorona.data.answer;
 
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.apache.commons.lang3.builder.EqualsBuilder;
@@ -12,6 +13,7 @@ import java.io.Serializable;
 @Data
 @Entity
 @NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "answer")
 public class Answer implements Serializable {
     public static final String TABLE_NAME = "answer";

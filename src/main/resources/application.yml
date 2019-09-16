@@ -3,7 +3,9 @@ spring:
     hibernate:
       ddl-auto: validate # Не обновлять структуру БД. Только проверка
     show-sql: true
-
+  jackson:
+    serialization:
+      fail-on-empty-beans: false
   datasource:
     url: jdbc:mysql://us-cdbr-iron-east-02.cleardb.net:3306/heroku_ce3ccc74b734089?failOverReadOnly=false&useUnicode=yes&characterEncoding=UTF-8&reconnect=true
     username: be211bdbd58eb9

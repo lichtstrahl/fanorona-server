@@ -21,6 +21,14 @@
 	</properties>
 
 	<dependencies>
+		<!-- Lombok - аннотации -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.8</version>
+			<scope>provided</scope>
+		</dependency>
+
         <!-- JPA -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -79,14 +87,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
-		</dependency>
-
-		<!-- Lombok - аннотации -->
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<version>1.18.8</version>
-			<scope>provided</scope>
 		</dependency>
 
 		<!-- Inject -->
@@ -148,6 +148,11 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.projectlombok</groupId>
+				<artifactId>lombok-maven-plugin</artifactId>
+				<version>1.18.6.0</version>
 			</plugin>
 		</plugins>
 	</build>
