@@ -9,4 +9,4 @@ deploy:
   api_key:
     secure: 34a3c213-75c2-46cd-9d70-c4103564e3c8
   app:
-    rsoi: fanorona-jva-server
+    rsoi: fanorona-java-server
