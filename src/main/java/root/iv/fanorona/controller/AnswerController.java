@@ -22,6 +22,7 @@ public class AnswerController {
 
     @PostMapping(value = "/api/answers")
     public ResponseEntity<Answer> create(@RequestBody Answer answer) {
+
         logger.info(String.format("Создание Answer с текстом \"%s\"", answer.getContent()));
         answer.setId(null);
         Answer newAnswer = answerRepository.save(answer);
